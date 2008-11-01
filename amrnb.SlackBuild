@@ -7,7 +7,7 @@
 . ../slack-package.conf
 
 NAME=amrnb
-VERSION=7.0.0.0
+VERSION=7.0.0.2
 BUILD=1
 
 cd $TMP
@@ -24,7 +24,7 @@ CXXFLAGS=$SLKCFLAGS \
             --enable-shared=yes \
             --enable-static=no
 
-make || exit 1
+make -j4 || exit 1
 
 PKG="$TMP/package-$NAME"
 mkdir -p $PKG
